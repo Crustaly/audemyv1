@@ -38,11 +38,11 @@ async function main() {
   
   console.log(count);
 
-  var intro = new Audio("audemyIntro.mp3");
+  var intro = new Audio("audioFiles/audemyIntro.mp3");
   intro.play();
   await waitForSeconds(11);
 
-  var options = new Audio("options.mp3");
+  var options = new Audio("audioFiles/options.mp3");
   options.play();
   await waitForSeconds(4);
 
@@ -54,7 +54,7 @@ async function main() {
     
     again = false;
     
-    var option = new Audio("optionAction.mp3");
+    var option = new Audio("audioFiles/optionAction.mp3");
     clickable = true;
     option.play();
     await waitForSeconds(8);
@@ -85,7 +85,7 @@ async function main() {
   console.log("HERE");
    mode= "again";
   while(mode=="again"){
-  var again = new Audio("again.mp3");
+  var again = new Audio("audioFiles/again.mp3");
   clickable = true;
     again.play();
  
@@ -102,7 +102,7 @@ async function main() {
 //make gnereate word function
 async function mainSpell() {
 
-  var introSpell = new Audio('introSpell.mp3');
+  var introSpell = new Audio('audioFiles/introSpell.mp3');
   introSpell.play();
   await waitForSeconds(12);
 
@@ -111,13 +111,13 @@ async function mainSpell() {
     clickable = false;
     generateWord();
     // Perform some actions
-    var qNum = new Audio('qNum.mp3');
+    var qNum = new Audio('audioFiles/qNum.mp3');
     qNum.play();
     await waitForSeconds(2);
     speak(count);
     await waitForSeconds(2);
 
-    var howSpell = new Audio('howSpell.mp3');
+    var howSpell = new Audio('audioFiles/howSpell.mp3');
     howSpell.play();
     await waitForSeconds(2);
 
@@ -131,27 +131,27 @@ async function mainSpell() {
     console.log(clickable);
   }
   if (right == 10) {
-    var allRight = new Audio('allRight.mp3');
+    var allRight = new Audio('audioFiles/allRight.mp3');
     allRight.play();
     await waitForSeconds(3);
   }
   else if (right >= 5) {
-    var youGot = new Audio('youGot.mp3');
+    var youGot = new Audio('audioFiles/youGot.mp3');
     youGot.play();
     await waitForSeconds(2);
     speak(right);
-    var good = new Audio('good.mp3');
+    var good = new Audio('audioFiles/good.mp3');
     good.play();
     await waitForSeconds(3);
   }
   else {
     
-    var youGot = new Audio('youGot.mp3');
+    var youGot = new Audio('audioFiles/youGot.mp3');
     youGot.play();
     await waitForSeconds(2);
     
     speak(right);
-    var better = new Audio('better.mp3');
+    var better = new Audio('audioFiles/better.mp3');
     better.play();
     await waitForSeconds(5);
   }
@@ -161,7 +161,7 @@ async function mainSpell() {
 
 async function mainMath() {
 
-  var introMath = new Audio('introMath.mp3');
+  var introMath = new Audio('audioFiles/introMath.mp3');
   introMath.play();
   await waitForSeconds(11);
 
@@ -171,19 +171,19 @@ async function mainMath() {
     clickable = false;
     generateAdditionProblems();
     // Perform some actions
-    var qNum = new Audio('qNum.mp3');
+    var qNum = new Audio('audioFiles/qNum.mp3');
     qNum.play();
     await waitForSeconds(2);
     speak(count);
     await waitForSeconds(2);
-    var whatIs = new Audio('whatIs.mp3');
+    var whatIs = new Audio('audioFiles/whatIs.mp3');
     whatIs.play();
     await waitForSeconds(2);
 
     speak(num1);
     await waitForSeconds(1);
 
-    var plus = new Audio('plus.mp3');
+    var plus = new Audio('audioFiles/plus.mp3');
     plus.play();
     await waitForSeconds(1);
 
@@ -199,25 +199,25 @@ async function mainMath() {
     console.log(clickable);
   }
   if (right == 10) {
-    var allRight = new Audio('allRight.mp3');
+    var allRight = new Audio('audioFiles/allRight.mp3');
     allRight.play();
     await waitForSeconds(3);
   }
   else if (right >= 5) {
-    var youGot = new Audio('youGot.mp3');
+    var youGot = new Audio('audioFiles/youGot.mp3');
     youGot.play();
     await waitForSeconds(1);
     speak(right);
-    var good = new Audio('good.mp3');
+    var good = new Audio('audioFiles/good.mp3');
     good.play();
     await waitForSeconds(3);
   }
   else {
-    var youGot = new Audio('youGot.mp3');
+    var youGot = new Audio('audioFiles/youGot.mp3');
     youGot.play();
     await waitForSeconds(1);
     speak(right);
-    var better = new Audio('better.mp3');
+    var better = new Audio('audioFiles/better.mp3');
     better.play();
     await waitForSeconds(5);
   }
@@ -240,7 +240,7 @@ document.body.onclick = function() {
   console.log(clickable + " in function");
   if (clickable) {
     recognition.start();
-    var start = new Audio('start.mp3');
+    var start = new Audio('audioFiles/start.mp3');
     start.play();
     console.log('Ready to receive an answer.');
 
@@ -273,7 +273,7 @@ async function checkInput() {
       mode = "spell"
     }
     else {
-      var errorMode = new Audio("errorMode.mp3");
+      var errorMode = new Audio("audioFiles/errorMode.mp3");
       errorMode.play();
       await waitForSeconds(9);
     }
@@ -287,20 +287,20 @@ async function checkInput() {
     console.log(toNum(input));
     if (num1 + num2 == toNum(input)||input.includes(num1+num2)) {
       right++;
-      var ding = new Audio('ding.mp3');
+      var ding = new Audio('audioFiles/ding.mp3');
       ding.play();
       await waitForSeconds(.5);
-      var correct = new Audio('correct.mp3');
+      var correct = new Audio('audioFiles/correct.mp3');
       correct.play();
 
     } else {
-      var drum = new Audio('drum.mp3');
+      var drum = new Audio('audioFiles/drum.mp3');
       drum.play();
       await waitForSeconds(.5);
-      var wrong = new Audio('wrong.mp3');
+      var wrong = new Audio('audioFiles/wrong.mp3');
       wrong.play();
       await waitForSeconds(2);
-      var correctWas = new Audio('correctWas.mp3');
+      var correctWas = new Audio('audioFiles/correctWas.mp3');
       correctWas.play();
       await waitForSeconds(3);
       speak(num1 + num2);
@@ -314,22 +314,22 @@ async function checkInput() {
     console.log(word);
     if (input == word) {
       right++;
-      var ding = new Audio('ding.mp3');
+      var ding = new Audio('audioFiles/ding.mp3');
       ding.play();
       await waitForSeconds(.5);
-      var correct = new Audio('correct.mp3');
+      var correct = new Audio('audioFiles/correct.mp3');
       correct.play();
 
     } else {
       console.log(word);
-      var drum = new Audio('drum.mp3');
+      var drum = new Audio('audioFiles/drum.mp3');
       drum.play();
       await waitForSeconds(.5);
-      var wrong = new Audio('wrong.mp3');
+      var wrong = new Audio('audioFiles/wrong.mp3');
       wrong.play();
       await waitForSeconds(.5);
       await waitForSeconds(2);
-      var correctWas = new Audio('correctWas.mp3');
+      var correctWas = new Audio('audioFiles/correctWas.mp3');
       correctWas.play();
       await waitForSeconds(3);
        console.log(word+" d");
@@ -345,7 +345,7 @@ async function checkInput() {
 
     }
     else if (input.includes("no")) {
-      var outro = new Audio("outro.mp3");
+      var outro = new Audio("audioFiles/outro.mp3");
           outro.play();
       mode = "done";
       await waitForSeconds(9);
